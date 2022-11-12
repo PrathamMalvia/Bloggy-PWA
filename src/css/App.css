@@ -42,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 } */
 
 .btn-outline-dark {
-  margin: 8px;
+  margin-bottom: 30px;
   padding: 10px;
   font-weight: 500;
 }

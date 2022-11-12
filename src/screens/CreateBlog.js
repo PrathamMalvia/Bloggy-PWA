@@ -6,9 +6,9 @@ function CreateBlog() {
 
   const history = useHistory()
 
-  const [title, setTitle] = useState(""); 
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [images,setImage] = useState(null)
+  const [images, setImage] = useState(null)
 
   const url = "https://floran-blog-api.herokuapp.com/"
 
@@ -19,16 +19,16 @@ function CreateBlog() {
   }
 
   let publishBlog = async () => {
-    let formData = new FormData() 
-    if(title !== "" && content !=="" && images !== null){
-      
-      formData.append("title",title)
-      formData.append("description",content)
-      formData.append("image",images)
+    let formData = new FormData()
+    if (title !== "" && content !== "" && images !== null) {
 
-      await axios.post(url,formData,config).then(
+      formData.append("title", title)
+      formData.append("description", content)
+      formData.append("image", images)
+
+      await axios.post(url, formData, config).then(
         (res) => {
-          
+
           setImage(null)
           setTitle("")
           setContent("")
@@ -69,7 +69,7 @@ function CreateBlog() {
             type="text"
             placeholder="Write Title here..."
             className="inputField"
-            value={title} 
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
